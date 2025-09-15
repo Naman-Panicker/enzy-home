@@ -1,103 +1,363 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Droplets, Leaf, ShieldCheck, Heart, Star, Users, Globe, CheckCircle } from 'lucide-react';
+import { Topbar } from "@/components/Topbar";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  
+    const products = [
+    {
+      id: 'toilet-cleaner',
+      name: 'Toilet Cleaner',
+      image: 'https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=400',
+      features: ['99.9% germ elimination', 'Biodegradable formula', 'Fresh enzyme scent']
+    },
+    {
+      id: 'glass-cleaner',
+      name: 'Glass Cleaner',
+      image: 'https://images.pexels.com/photos/4239140/pexels-photo-4239140.jpeg?auto=compress&cs=tinysrgb&w=400',
+      features: ['Streak-free shine', 'Safe for all surfaces', 'Plant-based ingredients']
+    },
+    {
+      id: 'handwash',
+      name: 'Hand Wash',
+      image: 'https://images.pexels.com/photos/4202325/pexels-photo-4202325.jpeg?auto=compress&cs=tinysrgb&w=400',
+      features: ['Gentle on skin', 'Antibacterial protection', 'Natural moisturizers']
+    },
+    {
+      id: 'dishwash',
+      name: 'Dish Wash',
+      image: 'https://images.pexels.com/photos/4239013/pexels-photo-4239013.jpeg?auto=compress&cs=tinysrgb&w=400',
+      features: ['Cuts through grease', 'Gentle on hands', 'Eco-friendly formula']
+    },
+    {
+      id: 'laundry',
+      name: 'Laundry Detergent',
+      image: 'https://images.pexels.com/photos/5591581/pexels-photo-5591581.jpeg?auto=compress&cs=tinysrgb&w=400',
+      features: ['Deep stain removal', 'Fabric care enzymes', 'Hypoallergenic']
+    },
+    {
+      id: 'odour-control',
+      name: 'Odour Control',
+      image: 'https://images.pexels.com/photos/4239119/pexels-photo-4239119.jpeg?auto=compress&cs=tinysrgb&w=400',
+      features: ['Neutralizes odours', 'Long-lasting freshness', 'Pet-safe formula']
+    }
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const values = [
+    { icon: Leaf, title: 'Sustainability', description: 'Biodegradable formulas that protect our planet' },
+    { icon: ShieldCheck, title: 'Innovation', description: 'Advanced enzyme technology for superior cleaning' },
+    { icon: Heart, title: 'Care', description: 'Safe for your family, pets, and the environment' },
+    { icon: Star, title: 'Integrity', description: 'Transparent ingredients and honest practices' }
+  ];
+
+  const testimonials = [
+    {
+      name: 'Sarah Johnson',
+      role: 'Eco-conscious Mom',
+      content: 'Finally found cleaning products that work amazing and are safe for my kids and pets!',
+      rating: 5
+    },
+    {
+      name: 'Mike Chen',
+      role: 'Green Living Advocate',
+      content: 'EnzyHome has transformed how we clean. Powerful results without harsh chemicals.',
+      rating: 5
+    },
+    {
+      name: 'Lisa Rodriguez',
+      role: 'Health Professional',
+      content: 'I recommend EnzyHome to all my patients concerned about toxic exposure in their homes.',
+      rating: 5
+    }
+  ];
+
+  const impactMetrics = [
+    { value: '250K+', label: 'Liters of toxic chemicals replaced' },
+    { value: '50K+', label: 'Households served' },
+    { value: '99.5%', label: 'Biodegradability rate' },
+    { value: '100%', label: 'Customer satisfaction' }
+  ];
+
+  return (
+    <div className="pt-16">
+      
+      {/* Hero Section */}
+      <section className="relative min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-blue-50 flex items-center">
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/5 to-teal-600/5"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div>
+                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  Redefining Clean,
+                  <span className="block bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                    The Enzyme Way
+                  </span>
+                </h1>
+                <p className="text-xl text-gray-600 mt-6 leading-relaxed">
+                  Safe, effective, and eco-friendly solutions for a healthier home. 
+                  Experience the power of enzyme-based cleaning that protects your family and planet.
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/products"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 transform transition-all duration-300 group"
+                >
+                  Shop Now
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+                </Link>
+                <Link
+                  href="/sustainability"
+                  className="inline-flex items-center px-8 py-4 border-2 border-emerald-600 text-emerald-600 font-semibold rounded-full hover:bg-emerald-600 hover:text-white transition-all duration-300"
+                >
+                  Explore Our Solutions
+                </Link>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="flex items-center space-x-8 pt-8">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-gray-900">250K+</div>
+                  <div className="text-sm text-gray-600">Happy Customers</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-gray-900">99.5%</div>
+                  <div className="text-sm text-gray-600">Biodegradable</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-gray-900">100%</div>
+                  <div className="text-sm text-gray-600">Plant-Based</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-100 to-teal-100 p-8">
+                <img
+                  src="https://images.pexels.com/photos/4239013/pexels-photo-4239013.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="EnzyHome Products"
+                  className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                />
+              </div>
+              <div className="absolute -top-4 -right-4 w-32 h-32 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center shadow-xl">
+                <div className="text-white text-center">
+                  <div className="text-2xl font-bold">100%</div>
+                  <div className="text-sm">Eco-Safe</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* About Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Founded with a vision for safe, plant-enzyme cleaning solutions, EnzyHome combines 
+              sustainability, performance, and elegance to revolutionize how we care for our homes.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((value, index) => (
+              <div key={index} className="text-center p-6 rounded-2xl hover:bg-emerald-50 transition-all duration-300 group">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <value.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
+                <p className="text-gray-600">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Product Highlights */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-emerald-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Featured Products</h2>
+            <p className="text-xl text-gray-600">
+              Discover our complete range of enzyme-powered cleaning solutions
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {products.map((product) => (
+              <div key={product.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{product.name}</h3>
+                  <ul className="space-y-2 mb-6">
+                    {product.features.map((feature, index) => (
+                      <li key={index} className="flex items-center text-gray-600">
+                        <CheckCircle className="w-4 h-4 text-emerald-500 mr-2 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href={`/products/${product.id}`}
+                    className="inline-flex items-center text-emerald-600 font-semibold hover:text-emerald-700 transition-colors duration-200 group"
+                  >
+                    View Product
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Section */}
+      <section className="py-20 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6">Our Environmental Impact</h2>
+            <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
+              Every EnzyHome product sold helps create a cleaner, safer world for future generations
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {impactMetrics.map((metric, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl lg:text-5xl font-bold mb-2">{metric.value}</div>
+                <div className="text-emerald-100 text-sm lg:text-base">{metric.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why EnzyHome */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Why Choose EnzyHome?</h2>
+            <p className="text-xl text-gray-600">
+              Experience the difference of enzyme-powered cleaning
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Chemical vs Enzyme */}
+            <div className="bg-gradient-to-br from-red-50 to-orange-50 p-8 rounded-2xl">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Chemical Cleaners</h3>
+              <ul className="space-y-4">
+                <li className="flex items-center text-gray-700">
+                  <div className="w-2 h-2 bg-red-400 rounded-full mr-3"></div>
+                  Harsh toxic ingredients
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <div className="w-2 h-2 bg-red-400 rounded-full mr-3"></div>
+                  Harmful to skin and respiratory system
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <div className="w-2 h-2 bg-red-400 rounded-full mr-3"></div>
+                  Non-biodegradable pollutants
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <div className="w-2 h-2 bg-red-400 rounded-full mr-3"></div>
+                  Unsafe around pets and children
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Enzyme Cleaners</h3>
+              <ul className="space-y-4">
+                <li className="flex items-center text-gray-700">
+                  <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
+                  100% biodegradable formulation
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
+                  Non-toxic and gentle on skin
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
+                  Eco-friendly and sustainable
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
+                  Safe for pets and family
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
+                  Superior cleaning power
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-emerald-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">What Our Customers Say</h2>
+            <p className="text-xl text-gray-600">
+              Join thousands of families who've made the switch to enzyme cleaning
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg">
+                <div className="flex mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <p className="text-gray-600 mb-6 italic">"{testimonial.content}"</p>
+                <div>
+                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                  <div className="text-emerald-600 text-sm">{testimonial.role}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Cleaning Routine?</h2>
+          <p className="text-xl text-emerald-100 mb-8">
+            Join thousands of families who've discovered the power of enzyme-based cleaning
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/products"
+              className="inline-flex items-center px-8 py-4 bg-white text-emerald-600 font-semibold rounded-full hover:shadow-xl hover:scale-105 transform transition-all duration-300 group"
+            >
+              Shop Our Products
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-emerald-600 transition-all duration-300"
+            >
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
