@@ -148,15 +148,15 @@ const Products = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-emerald-50 via-teal-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-purple-50 via-violet-50 to-fuchsia-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Our <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+              Our <span className="bg-gradient-to-r from-enzy-600 to-enzy-300 bg-clip-text text-transparent">
                 Products
               </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-gray-800 max-w-3xl mx-auto mb-8">
               Discover our complete range of enzyme-powered cleaning solutions designed to keep your home 
               spotless while protecting your family and the environment.
             </p>
@@ -174,9 +174,9 @@ const Products = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categories.map((category) => (
-              <div key={category.id} className="bg-gradient-to-br from-gray-50 to-emerald-50 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 group cursor-pointer">
+              <div key={category.id} className="bg-gradient-to-br from-gray-50 to-purple-50 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 group cursor-pointer">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-enzy-600 to-enzy-300 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
                     <category.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900">{category.name}</h3>
@@ -185,7 +185,7 @@ const Products = () => {
                 <ul className="space-y-1 text-sm text-gray-500">
                   {category.products.map((product, index) => (
                     <li key={index} className="flex items-center">
-                      <div className="w-1 h-1 bg-emerald-400 rounded-full mr-2"></div>
+                      <div className="w-1 h-1 bg-enzy-500 rounded-full mr-2"></div>
                       {product}
                     </li>
                   ))}
@@ -197,7 +197,7 @@ const Products = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-emerald-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Products</h2>
@@ -211,7 +211,7 @@ const Products = () => {
                   <div className="absolute top-4 left-4 z-10">
                     <span className={`px-3 py-1 text-xs font-semibold rounded-full ${
                       product.badge === 'Best Seller' 
-                        ? 'bg-emerald-500 text-white' 
+                        ? 'bg-enzy-500 text-white' 
                         : 'bg-orange-500 text-white'
                     }`}>
                       {product.badge}
@@ -228,7 +228,7 @@ const Products = () => {
                 </div>
                 
                 <div className="p-6">
-                  <div className="text-sm text-emerald-600 font-medium mb-2">{product.category}</div>
+                  <div className="text-sm text-enzy-600 font-medium mb-2">{product.category}</div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">{product.name}</h3>
                   
                   <div className="flex items-center mb-3">
@@ -245,7 +245,7 @@ const Products = () => {
                   <ul className="space-y-2 mb-6">
                     {product.features.slice(0, 3).map((feature, index) => (
                       <li key={index} className="flex items-center text-sm text-gray-600">
-                        <CheckCircle className="w-4 h-4 text-emerald-500 mr-2 flex-shrink-0" />
+                        <CheckCircle className="w-4 h-4 text-enzy-500 mr-2 flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
@@ -263,11 +263,11 @@ const Products = () => {
                   <div className="flex space-x-3">
                     <Link
                       href={`/products/${product.id}`}
-                      className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-600 text-white py-3 px-4 rounded-lg text-center font-medium hover:shadow-lg hover:scale-105 transform transition-all duration-200"
+                      className="flex-1 bg-gradient-to-r from-enzy-600 to-enzy-300 text-white py-3 px-4 rounded-lg text-center font-medium hover:shadow-lg hover:scale-105 transform transition-all duration-200"
                     >
                       View Details
                     </Link>
-                    <button className="px-4 py-3 border border-emerald-600 text-emerald-600 rounded-lg hover:bg-emerald-600 hover:text-white transition-colors duration-200">
+                    <button className="px-4 py-3 border border-enzy-600 text-enzy-600 rounded-lg hover:bg-enzy-500 hover:text-white transition-colors duration-200">
                       Add to Cart
                     </button>
                   </div>
@@ -281,7 +281,7 @@ const Products = () => {
       {/* Benefits Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-3xl p-8 lg:p-12 text-white">
+          <div className="bg-gradient-to-r from-enzy-600 to-enzy-300 rounded-3xl p-8 lg:p-12 text-white">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-3xl font-bold mb-6">Why Choose EnzyHome Products?</h2>
@@ -295,7 +295,7 @@ const Products = () => {
                     'Satisfaction guaranteed'
                   ].map((benefit, index) => (
                     <div key={index} className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-emerald-200 mr-3" />
+                      <CheckCircle className="w-5 h-5 text-enzy-300 mr-3" />
                       <span>{benefit}</span>
                     </div>
                   ))}
@@ -304,8 +304,8 @@ const Products = () => {
               <div className="text-center lg:text-right">
                 <div className="inline-block bg-white/10 backdrop-blur-sm rounded-2xl p-6">
                   <div className="text-4xl font-bold mb-2">100%</div>
-                  <div className="text-emerald-100">Satisfaction Guarantee</div>
-                  <p className="text-sm text-emerald-200 mt-2">
+                  <div className="text-purple-50">Satisfaction Guarantee</div>
+                  <p className="text-sm text-purple-50 mt-2">
                     Try any EnzyHome product risk-free for 30 days
                   </p>
                 </div>
@@ -316,7 +316,7 @@ const Products = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-emerald-50">
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-purple-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Can't Find What You're Looking For?</h2>
           <p className="text-lg text-gray-600 mb-8">
@@ -324,7 +324,7 @@ const Products = () => {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 transform transition-all duration-300 group"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-enzy-600 to-enzy-300 text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 transform transition-all duration-300 group"
           >
             Contact Our Experts
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />

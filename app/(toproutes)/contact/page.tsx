@@ -3,7 +3,7 @@
 
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, MessageSquare, Users, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageSquare, ArrowRight } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -50,15 +50,15 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Call Us',
-      details: '+1 (555) 123-4567',
-      subDetails: 'Mon-Fri, 9AM-6PM EST',
+      details: '+1234567890',
+      subDetails: 'Mon-Fri, 9AM-6PM IST',
       action: 'Call Now'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
       details: 'Eco-Friendly Campus',
-      subDetails: 'Green Valley, CA 90210',
+      subDetails: 'Kamla Nagar, Agra, 282005',
       action: 'Get Directions'
     }
   ];
@@ -95,11 +95,11 @@ const Contact = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-emerald-50 via-teal-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-purple-50 via-violet-50 to-fuchsia-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Get in <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+              Get in <span className="bg-gradient-to-r from-enzy-600 to-enzy-300 bg-clip-text text-transparent">
                 Touch
               </span>
             </h1>
@@ -116,14 +116,14 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {contactInfo.map((info, index) => (
-              <div key={index} className="text-center p-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 hover:shadow-lg transition-all duration-300 group cursor-pointer">
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div key={index} className="text-center p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-violet-50 hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                <div className="w-16 h-16 bg-gradient-to-br from-enzy-600 to-enzy-300 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <info.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{info.title}</h3>
                 <p className="text-lg text-gray-700 mb-1">{info.details}</p>
                 <p className="text-sm text-gray-500 mb-4">{info.subDetails}</p>
-                <button className="text-emerald-600 font-medium hover:text-emerald-700 transition-colors duration-200">
+                <button className="text-enzy-300 font-medium hover:text-enzy-600 transition-colors duration-200">
                   {info.action} →
                 </button>
               </div>
@@ -133,13 +133,13 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-emerald-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div className="bg-white p-8 rounded-2xl shadow-xl">
               <div className="flex items-center mb-6">
-                <MessageSquare className="w-6 h-6 text-emerald-500 mr-3" />
+                <MessageSquare className="w-6 h-6 text-enzy-600 mr-3" />
                 <h2 className="text-2xl font-bold text-gray-900">Send us a Message</h2>
               </div>
 
@@ -155,7 +155,7 @@ const Contact = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-enzy-600 focus:border-transparent transition-colors duration-200"
                       placeholder="Your full name"
                     />
                   </div>
@@ -170,7 +170,7 @@ const Contact = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-enzy-600 focus:border-transparent transition-colors duration-200"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -186,7 +186,7 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-enzy-600 focus:border-transparent transition-colors duration-200"
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
@@ -199,7 +199,7 @@ const Contact = () => {
                       name="inquiryType"
                       value={formData.inquiryType}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-enzy-600 focus:border-transparent transition-colors duration-200"
                     >
                       {inquiryTypes.map((type) => (
                         <option key={type.value} value={type.value}>
@@ -220,7 +220,7 @@ const Contact = () => {
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-enzy-600 focus:border-transparent transition-colors duration-200"
                     placeholder="Brief description of your inquiry"
                   />
                 </div>
@@ -235,14 +235,14 @@ const Contact = () => {
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-enzy-600 focus:border-transparent transition-colors duration-200"
                     placeholder="Please provide details about your question or how we can help you..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white py-4 px-6 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transform transition-all duration-300 flex items-center justify-center group"
+                  className="w-full bg-gradient-to-r from-enzy-600 to-enzy-300 text-white py-4 px-6 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transform transition-all duration-300 flex items-center justify-center group"
                 >
                   <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
                   Send Message
@@ -254,7 +254,7 @@ const Contact = () => {
             <div className="space-y-8">
 
               {/* Business Hours */}
-              <div className="bg-gradient-to-br from-emerald-500 to-teal-600 text-white p-8 rounded-2xl">
+              <div className="bg-gradient-to-br from-enzy-600 to-enzy-300 text-white p-8 rounded-2xl">
                 <h3 className="text-xl font-semibold mb-6">Business Hours</h3>
                 <div className="space-y-3">
                   <div className="flex justify-between">
@@ -270,8 +270,8 @@ const Contact = () => {
                     <span>Closed</span>
                   </div>
                 </div>
-                <div className="mt-6 pt-6 border-t border-emerald-400">
-                  <p className="text-sm text-emerald-100">
+                <div className="mt-6 pt-6 border-t border-white">
+                  <p className="text-sm text-white">
                     For urgent matters outside business hours, please send an email and we'll respond first thing the next business day.
                   </p>
                 </div>
@@ -304,7 +304,7 @@ const Contact = () => {
             <p className="text-gray-600 mb-4">
               Don't see your question answered here?
             </p>
-            <button className="text-emerald-600 hover:text-emerald-700 font-medium">
+            <button className="text-enzy-500 hover:text-enzy-600 font-medium">
               View Full FAQ Section →
             </button>
           </div>
@@ -312,7 +312,7 @@ const Contact = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-emerald-50 to-teal-50">
+      <section className="py-20 bg-gradient-to-br from-purple-50 to-violet-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Let's Create a Cleaner Tomorrow Together</h2>
           <p className="text-lg text-gray-600 mb-8">
@@ -322,14 +322,14 @@ const Contact = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/products"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 transform transition-all duration-300 group"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-enzy-600 to-enzy-300 text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 transform transition-all duration-300 group"
             >
               Explore Our Products
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </a>
             <a
               href="/sustainability"
-              className="inline-flex items-center px-8 py-4 border-2 border-emerald-600 text-emerald-600 font-semibold rounded-full hover:bg-emerald-600 hover:text-white transition-all duration-300"
+              className="inline-flex items-center px-8 py-4 border-2 border-enzy-600 text-enzy-600 font-semibold rounded-full hover:bg-enzy-600 hover:text-white transition-all duration-300"
             >
               Learn About Our Impact
             </a>
