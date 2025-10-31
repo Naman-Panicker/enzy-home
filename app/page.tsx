@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowRight, Droplets, Leaf, ShieldCheck, Heart, Star, Users, Globe, CheckCircle } from 'lucide-react';
+import { ArrowRight, Leaf, ShieldCheck, Heart, Star, CheckCircle } from 'lucide-react';
+import { Topbar } from "@/components/Topbar";
 
 
 export default function Home() {
@@ -80,6 +81,8 @@ export default function Home() {
 
   return (
     <div className="pt-16">
+
+      <Topbar/>
       
       {/* Hero Section */}
       <section className="relative min-h-screen bg-white flex items-center">
